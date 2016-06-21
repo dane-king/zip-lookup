@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyC6fdGphY-LIFarNNS_3hNqaCQWl69S-i0",
+      authDomain: "zip-service.firebaseapp.com",
+      databaseURL: "https://zip-service.firebaseio.com",
+      storageBucket: "zip-service.appspot.com",
+    };
+    firebase.initializeApp(config);
+
+    var ref = firebase.database().ref("zip-service");
+    ref.once('value')
+    .then(function(dataSnapshot) {
+      console.log(dataSnapshot);
+    });
+
+  </script>
+</body>
+</html>
